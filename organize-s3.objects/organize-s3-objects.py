@@ -4,11 +4,11 @@ from datetime import datetime
 today = datetime.today()
 todays_date = today.strftime("%Y%m%d")
 
-def lamba_handler(event, context):
+def lambda_handler(event, context):
 
     s3_client = boto3.client('s3')
 
-    bucket_name = "mbella50-organize-s3-objects"
+    bucket_name = "mbella-organize-s3-objects"
     list_objects_response = s3_client.list_objects(Bucket=bucket_name)
 
     get_contents = list_objects_response.get("Contents")
